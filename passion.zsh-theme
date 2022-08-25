@@ -81,8 +81,8 @@ function directory() {
 # git
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$FG[$GIT_PROMPT_COLOR]%}git(%{$FG[$GIT_BRANCH_COLOR]%}";
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} ";
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg_no_bold[$GIT_DIRTY_COLOR]%}) 🔥";
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_no_bold[$GIT_CLEAN_COLOR]%})";
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg_no_bold[$GIT_DIRTY_COLOR]%}) 🚧";
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_no_bold[$GIT_CLEAN_COLOR]%}) 👍";
 
 function update_git_status() {
     GIT_STATUS=$(git_prompt_info);
@@ -102,9 +102,9 @@ function update_command_status() {
     export COMMAND_RESULT=$COMMAND_RESULT
     if $COMMAND_RESULT;
     then
-        arrow="%{$fg_bold[white]%}%{$FG[$COMMAND_ARROW_1_COLOR]%}❱%{$FG[$COMMAND_ARROW_2_COLOR]%}❱%{$FG[$COMMAND_ARROW_3_COLOR]%}❱";
+        arrow="😎 %{$fg_bold[white]%}%{$FG[$COMMAND_ARROW_1_COLOR]%}❱%{$FG[$COMMAND_ARROW_2_COLOR]%}❱%{$FG[$COMMAND_ARROW_3_COLOR]%}❱";
     else
-        arrow="$fg_bold[white]%}%{$FG[$COMMAND_ARROW_ERROR]%}❱❱❱";
+        arrow="💀 $fg_bold[white]%}%{$FG[$COMMAND_ARROW_ERROR]%}❱❱❱";
     fi
     COMMAND_STATUS="${arrow}${reset_font}${color_reset}";
 }
