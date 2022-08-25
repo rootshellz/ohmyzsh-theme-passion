@@ -102,9 +102,9 @@ function update_command_status() {
     export COMMAND_RESULT=$COMMAND_RESULT
     if $COMMAND_RESULT;
     then
-        arrow="😎 %{$fg_bold[white]%}%{$FG[$COMMAND_ARROW_1_COLOR]%}❱%{$FG[$COMMAND_ARROW_2_COLOR]%}❱%{$FG[$COMMAND_ARROW_3_COLOR]%}❱";
+        arrow="%{$fg_bold[white]%}%{$FG[$COMMAND_ARROW_1_COLOR]%}❱%{$FG[$COMMAND_ARROW_2_COLOR]%}❱%{$FG[$COMMAND_ARROW_3_COLOR]%}❱";
     else
-        arrow="💀 $fg_bold[white]%}%{$FG[$COMMAND_ARROW_ERROR]%}❱❱❱";
+        arrow="$fg_bold[white]%}%{$FG[$COMMAND_ARROW_ERROR]%}❱❱❱";
     fi
     COMMAND_STATUS="${arrow}${reset_font}${color_reset}";
 }
@@ -127,9 +127,9 @@ output_command_execute_after() {
     local color_cmd="";
     if $1;
     then
-        color_cmd="$fg_no_bold[$COMMAND_RESULT_SUCCESS_COLOR]";
+        color_cmd="$fg_no_bold[$COMMAND_RESULT_SUCCESS_COLOR]😎 ";
     else
-        color_cmd="$fg_bold[$COMMAND_RESULT_ERROR_COLOR]";
+        color_cmd="$fg_bold[$COMMAND_RESULT_ERROR_COLOR]💀 ";
     fi
     local color_reset="$reset_color";
     cmd="${color_cmd}${cmd}${color_reset}"
